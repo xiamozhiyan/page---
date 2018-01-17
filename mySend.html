@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+    table{
+        max-height: 407px;
+        border-bottom: 1px solid #ddd;
+    }
+    th,td{
+        text-align: center;
+    }
+    .table-page{
+        width: 100%;
+        height: 80px;
+        position:relative;
+    }
+    .table-pages{
+        width: auto;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right:0;
+        margin: auto;
+    }
+    .page_div {
+        font-size: 15px;
+        font-family: "microsoft yahei";
+        color: #666666;
+        margin-right: 10px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+    /*
+     * 页数按钮样式
+     */
+    .page_div a {
+        min-width: 30px;
+        height: 28px;
+        border: 1px solid #dce0e0!important;
+        text-align: center;
+        margin: 0 4px;
+        cursor: pointer;
+        line-height: 28px;
+        color: #666666;
+        font-size: 13px;
+        display: inline-block;
+        text-decoration: none;
+    }
+    #nextPage {
+        min-width: 30px;
+    }
+
+    .page_div .current {
+        background-color: #0073A9;
+        border-color: #0073A9;
+        color: #FFFFFF;
+    }
+    .totalPages {
+        margin: 0 10px;
+    }
+    .totalPages span,
+    .totalSize span {
+        color: #0073A9;
+        margin: 0 5px;
+    }
+</style>
+<body>
+    <table class="table">
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="page" class="page_div"></div>
+</body>
+<script type="text/javascript" src="paging.js"></script>
+<script src="page.js"></script>
+<script src="table.js"></script>
+<script>
+    //每页显示条数
+    let pageNum = 10;
+    table('table.json','get',pageNum)
+    page('table.json','get',pageNum)
+</script>
+</html>
